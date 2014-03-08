@@ -1,0 +1,31 @@
+functionn [L U] = Crout(A)
+        [n n] = size(A);
+        L = zeros(n);
+        L = eye(n);
+        L(1 : n, 1) = A(1 : n, 1);
+        for i = 1 : n
+                for j = i : n
+                        % --------------------------------
+                        s = 0;
+                        for m = 1 : k-1
+                                s = s + L(i, m) * U(m, k);
+                        endfor
+                        % --------------------------------
+                        % echivalent pentru calculul sumei
+                        % s = L(i, 1 : k-1) * U(1 : k-1, k);
+                        L(i, k) = A(i, k) - s;
+                endfor
+                for j = i+1 : n
+                        % --------------------------------
+                        s = 0;
+                        for m = 1 : k-1
+                                s = s + L(k, m) * U(m, j);
+                        endfor
+                        % ---------------------------------
+                        % echivalent pentru calculul sumei
+                        % s = L(k, 1 : k-1) * U(1 : k-1, j);
+                        U(k, j) = (A(k, j) - s) / L(k, k);
+                endfor
+        endfor
+endfunction
+
