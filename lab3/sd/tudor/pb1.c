@@ -14,6 +14,7 @@ void add(nod * & l, char a);
 nod* search(nod * l, char a);
 void delete_el(nod * & l, char a);
 void reverse(nod * & l);
+void to_upper(nod * l);
 
 
 int main()
@@ -38,6 +39,8 @@ int main()
 	puts("Lista:");
 	print(lst);
 	reverse(lst);
+	print(lst);
+	to_upper(lst);
 	print(lst);
 	return 0;
 }
@@ -113,4 +116,15 @@ void reverse (nod *& l)
 		l = aux;
 	}
 	l = nou;
+}
+
+void to_upper(nod * l)
+{
+	nod * aux = l;
+	aux->c -= 32;
+	aux = aux->leg;
+	while (aux->leg != NULL) {
+		aux->c -= 32;
+		aux = aux->leg;
+	}	
 }
