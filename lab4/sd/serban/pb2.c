@@ -6,7 +6,7 @@ typedef struct nod {
 	struct nod* next;
 } Nod;
 
-void adauga(Nod* &l, int x)
+void adauga (Nod* &l, int x)
 {
 	Nod* aux, *nou = (Nod*) malloc (sizeof(Nod));
 
@@ -23,41 +23,42 @@ void adauga(Nod* &l, int x)
 	}
 }
 
-void afisList (nod *l) 
+void afisare(Nod* &l)
 {
-    printf ("Elementele listei: ");
-    while (l != NULL) {
-        printf ("%d ", l->val);
-        l = l->next;
+	Nod* aux = l;
+	
+    while (aux != NULL) {
+        printf ("%d ", aux->val);
+        aux = aux->next;
     }
     printf("\n");
 }
 
-void reverse (nod* &l)
+void reverse(Nod* &l)
 {
-	nod* aux;
-	nod* nou = NULL;
+	Nod* temp;
+	Nod* nou = NULL;
 	while (l != NULL) {
-		aux = l->next;
+		temp = l->next;
 		l->next = nou;
 		nou = l;
-		l = aux;
+		l = temp;
 	}
 	l = nou;
+
 }
+
 
 int main()
 {
-	Nod* lst = NULL;
-	adauga(lst, 10);
-	adauga(lst, 15);
-	adauga(lst, 20);
-	adauga(lst, 30);
-	adauga(lst, 25);
-	adauga(lst, 35);
-	adauga(lst, 45);
-	adauga(lst, 13);
+	Nod *lst = NULL;
+	int i, x;
+	for (i = 5; i <= 10*5; i+=5)
+		adauga(lst, i);
+	afisare(lst);
+
 	reverse(lst);
-	afisList(lst);
+	afisare(lst);
+
 	return 0;
 }
