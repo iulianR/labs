@@ -10,18 +10,6 @@ int Cost[M][M];
 int n;
 int cmin;
 
-int posibil2 (int k)
-{
-	if (Cost[x[k - 1]][x[k]] == BIG)
-		return 0;
-	if (Cost[x[n]][x[1]] < BIG)
-		return 1;
-	for (int i = 1; i <= k -1; i++)
-		if (x[k] != x[i])
-			return 1;
-
-}
-
 int posibil(int k )
 {
 	int ok, i;
@@ -31,6 +19,7 @@ int posibil(int k )
 	for (i = 1; i <= k -1; i++)
 		if (x[k] == x[i])
 			return 0;
+	return 1;
 }
 
 void memsol()
