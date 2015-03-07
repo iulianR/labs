@@ -1,0 +1,13 @@
+Loaded plugins: auto-update-debuginfo, langpacks
+Resolving Dependencies
+--> Running transaction check
+---> Package racket.x86_64 0:6.1.1.6-1.fc21 will be installed
+--> Processing Dependency: racket(games) for package: racket-6.1.1.6-1.fc21.x86_64
+--> Processing Dependency: racket(plai) for package: racket-6.1.1.6-1.fc21.x86_64
+--> Finished Dependency Resolution
+Error: Package: racket-6.1.1.6-1.fc21.x86_64 (mordae-racket)
+           Requires: racket(plai)
+Error: Package: racket-6.1.1.6-1.fc21.x86_64 (mordae-racket)
+           Requires: racket(games)
+ You could try using --skip-broken to work around the problem
+ You could try running: rpm -Va --nofiles --nodigest
