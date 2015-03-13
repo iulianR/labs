@@ -1,0 +1,11 @@
+parent(X, Y).
+assert(parent(andrei, andreea)).
+assert(parent(andreea, mihai)).
+assert(grandparent(X,Y):-(parent(X,Z),parent(Z,Y))).
+assert(parent(andreea, andrei)).
+grandparent(X,X).
+
+
+assert(bind(X, Y) :- X is Y).
+format("~w ~n", [X]), bind(X, 4), format("~w ~n", [X]).
+format("~w ~n", [X]), bind(X, 4), format("~w ~n", [X]), bind(X, 5).

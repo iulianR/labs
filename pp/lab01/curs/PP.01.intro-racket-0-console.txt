@@ -1,0 +1,11 @@
+'(1 2 3 4 5 6 7 8)
+
+(filter odd? '(1 2 3 4 5 6 7 8))
+
+(filter (λ (x) (zero? (modulo x 3))) '(1 2 3 4 5 6 7 8))
+
+(map odd? '(1 2 3 4 5 6 7 8))
+
+(map (λ (list) (filter (λ (x) (zero? (modulo x 3))) list)) '( (1 2 3 4 5 6 7 8)  (5 2 6 8 4 9 12 2) ))
+
+(map (λ (list divisor) (filter (λ (x) (zero? (modulo x divisor))) list)) '( (1 2 3 4 5 6 7 8)  (5 2 6 8 4 9 12 2) ) '(3 2))

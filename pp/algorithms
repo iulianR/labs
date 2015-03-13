@@ -1,0 +1,15 @@
+Algorithms
+
+1) Factorial
+(define factorial
+    (λ(n)
+      (if (= n 0)
+          1
+          (* n (factorial(- n 1))))))
+
+2) Sum of list
+(define sum-list
+    (λ(L)
+      (if (null? L)
+          0
+          (+ (car L) (sum-list (cdr L))))))

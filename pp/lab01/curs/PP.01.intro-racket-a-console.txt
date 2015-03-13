@@ -1,0 +1,50 @@
+> 1
+1
+> 2
+2
+> a
+a: undefined;
+> 'a
+a
+> #t
+#t
+> '(a . 1)
+(a . 1)
+> '((3 . 4) . 2)
+((3 . 4) . 2)
+> '(+ 1 2)
+(+ 1 2)
+> (eval '(+ 1 2))
+3
+> (+ 1 2)
+3
+> (car '(3 . 4))
+3
+> '(3 . (4 . 5))
+(3 4 . 5)
+> '(3 . (4 . (5 . 6)))
+(3 4 5 . 6)
+> '(3 . (4 . (5 . '())))
+(3 4 5 quote ())
+> '(3 . (4 . (5 . ())))
+(3 4 5)
+> (car '(3 . (4 . (5 . ()))))
+3
+> (cdr '(3 . (4 . (5 . ()))))
+(4 5)
+> (cdr '(3 4 5))
+(4 5)
+> (cdr '(4 5))
+(5)
+> (cdr '(5))
+()
+> (display 5)
+5
+> (display (list 'This 'is))
+(This is)
+> (lambda (x) (display (list 'This 'is x)))
+#<procedure>
+> ((lambda (x) (display (list 'This 'is x))) 5)
+(This is 5)
+> (map (lambda (x) (display (list 'This 'is x))) '(2 3 4 5))
+(This is 2)(This is 3)(This is 4)(This is 5)(#<void> #<void> #<void> #<void>)
